@@ -4,7 +4,7 @@ export function App() {
   return (
     <Post
       author="Gabriel Lima"
-      content="lorem ipsum dolor sit amet, consectetur adipaaa"
+      content="lorem ipsum dolor sit amet, consectesstur adipaaa"
     />
   )
 }
