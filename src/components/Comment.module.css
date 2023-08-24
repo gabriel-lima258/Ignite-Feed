@@ -1,0 +1,86 @@
+.comment {
+    margin-top: 3.2rem;
+    display: flex;
+    gap: 1.6rem;
+}
+
+.comment > img {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 8px;
+}
+
+.commentBox {
+    flex: 1;
+}
+
+.commentContent {
+    background: var(--gray-700);
+    border-radius: 8px;
+    padding: 1rem;
+}
+
+.commentContent header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.commentContent header button {
+    background: transparent;
+    border: 0;
+    color: var(--gray-400);
+    cursor: pointer;
+    line-height: 0; /* para diminuir o tamanho da borda quando usar o tab */
+    border-radius: 2px;
+}
+
+.commentContent header button:hover {
+    color: var(--red-500);
+}
+
+.commentContent p {
+    margin-top: 1.6rem;
+    color: var(--gray-300);
+}
+
+.authorAndTime strong {    
+    display: block;
+    line-height: 1.6;
+    font-size: 1.4rem;
+}
+
+.authorAndTime time {    
+    display: block;
+    line-height: 1.6;
+    font-size: 1.2rem;
+}
+
+.commentBox footer {
+    margin-top: 1.4rem;
+}
+
+.commentBox footer button {
+    background: transparent;
+    border: 0;
+    color: var(--gray-400);
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+
+    border-radius: 2px;
+}
+
+.commentBox footer button:hover {
+    color: var(--gray-300);
+}
+
+.commentBox footer button svg {
+    margin-right: 0.5rem;
+}
+
+.commentBox footer button span::before { /* before cria um conteúdo dentro do span no css */
+    content: "\2022";
+    padding: 0 0.25rem;
+}

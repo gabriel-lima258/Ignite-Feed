@@ -68,3 +68,57 @@
     color: var(--gray-400);
     line-height: 1.6;
 }
+
+.commentForm {
+    width: 100%;
+    margin-top: 2.4rem;
+    padding-top: 2.4rem;
+    border-top: 1px solid var(--gray-600);
+}
+
+.commentForm > strong {
+    line-height: 1.6;
+    color: var(--gray-100);
+}
+
+.commentForm textarea{
+    width: 100%;
+    background: var(--gray-900);
+    border: 0;
+    resize: none;
+    height: 9.6rem;
+    padding: 1rem;
+    border-radius: 8px;
+    color: var(--gray-100);
+    line-height: 1.4;
+    margin-top: 1.6rem;
+}
+
+.commentForm footer { /* para esconder o botão sem o focus */
+    visibility: hidden;
+    max-height: 0;
+}
+
+.commentForm:focus-within footer { /* focus-within serve para qualquer elemento dentro da classe */
+    visibility: visible;
+    max-height: none;
+}
+
+.commentForm button { 
+    margin-top: 1.6rem;
+    padding: 1.2rem 1.5rem;
+    background: var(--green-500);
+    border-radius: 8px;
+    border: 0;
+    color: var(--white);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.commentForm > button:hover {
+    background: var(--green-300);
+}
+
+.commentList {
+    margin-top: 2rem;
+}
