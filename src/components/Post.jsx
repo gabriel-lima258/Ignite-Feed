@@ -37,8 +37,25 @@ export function Post({author, publishedAt, content}){
     }
 
     function handleNewCommentChange() {
+        event.target.setCustomValidity('')
         setNewCommentText(event.target.value);
     }
+
+    function handleNewCommentInvalid() {
+        event.target.setCustomValidity('Esse campo é obrigatório!')
+    }
+
+    function deleteComment(commentToDelete) {
+
+        // o método filter vai retornar booleanos, caso seja true mantém, false ele vai remover da lista
+        const commentsWithoutDeletedOne = comments.filter(comment => {
+            return comment !== commentToDelete
+        })
+
+        setComments(commentsWithoutDeletedOne);
+    }
+
+    const isNewCommentEmpty = newCommentText.length === 0;
 
     return(
         <article className={styles.post}>
@@ -76,10 +93,12 @@ export function Post({author, publishedAt, content}){
                     value={newCommentText}
                     placeholder='Deixe seu comentário'
                     onChange={handleNewCommentChange}
+                    onInvalid={handleNewCommentInvalid}
+                    required
                 />
 
                 <footer>
-                    <button type='submit'>Publicar</button>
+                    <button type='submit' disabled={isNewCommentEmpty}>Publicar</button>
                 </footer>
             </form>
 
@@ -87,7 +106,10 @@ export function Post({author, publishedAt, content}){
                 {
                     comments.map(comment => {
                         return (
-                            <Comment key={comment} content={comment}/>
+                            <Comment 
+                            key={comment} 
+                            content={comment} 
+                            onDeleteComment={deleteComment}/>
                         )
                     })
                 }
